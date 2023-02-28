@@ -111,6 +111,13 @@ switch (opcao)
                         NovaPf.endereco = novoEnd;
                         metodoPf.Inserir(NovaPf);
 
+        
+                        using (StreamWriter sw = new StreamWriter($"{NovaPf.nome}.txt"))
+                        {
+                           sw.WriteLine(NovaPf.nome); 
+                        }
+
+
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.WriteLine($"Cadastro realizado com sucesso!");
                         Console.ResetColor();
